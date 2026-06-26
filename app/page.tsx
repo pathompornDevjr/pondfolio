@@ -36,6 +36,7 @@ import {
   SiPrisma,
   SiProgress,
   SiReact,
+  SiTypescript,
 } from "react-icons/si";
 
 const Home = () => {
@@ -115,7 +116,7 @@ const Home = () => {
           <p className="md:text-4xl text-2xl font-bold"> About Me</p>
           <p className="text-gray-300  mt-3 text-xs lg:text-[0.9rem]">
             "Hello! My name is Pathomporn Wongsuwan, but you can call me
-            PangPond. I'm currently 20 years old. I began my journey into
+            PangPond. I'm currently 21 years old. I began my journey into
             programming at age 18, and since then, I've developed an alumni
             management system, an e-commerce platform, and a mobile application
             called Cartzy. I also have several other projects currently in
@@ -226,7 +227,11 @@ const Home = () => {
               </span>
               <span className="w-fit p-2 rounded-lg bg-gray-900 border border-gray-600 flex items-center gap-2">
                 <FaJs color="Yellow" size={20} />
-                <p className="text-sm text-gray-100">Javascript</p>
+                <p className="text-sm text-gray-100">JavaScript</p>
+              </span>
+               <span className="w-fit p-2 rounded-lg bg-gray-900 border border-gray-600 flex items-center gap-2">
+                <SiTypescript color="blue" size={20} />
+                <p className="text-sm text-gray-100">TypeScript</p>
               </span>
             </div>
             <div className="mt-2.5 flex flex-wrap gap-2">

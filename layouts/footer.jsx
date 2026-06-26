@@ -1,7 +1,16 @@
 import FadeInSection from "@/components/fade-in-section";
 import { Phone } from "lucide-react";
 import Link from "next/link";
-import { FaEnvelope, FaFacebookF, FaGithub, FaLine, FaLinkedin, FaRegEnvelope, FaTiktok, FaYoutube } from "react-icons/fa";
+import {
+  FaEnvelope,
+  FaFacebookF,
+  FaGithub,
+  FaLine,
+  FaLinkedin,
+  FaRegEnvelope,
+  FaTiktok,
+  FaYoutube,
+} from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -79,22 +88,26 @@ const Footer = () => {
         <FadeInSection className="flex flex-col gap-3.5 items-start z-30">
           <p className="text-xl font-bold text-gray-50">Projects</p>
           <Link
-            href="/"
+            href="https://alumni.rmu.ac.th"
             className="ml-4 hover:text-white transition-all hover:underline"
           >
-            <li className="text-sm text-gray-300">Alumni System</li>
+            <li className="text-sm text-gray-300">
+              Alumni Network Infomation System
+            </li>
+          </Link>
+          <Link
+            href="https://lawinternship.rmu.ac.th"
+            className="ml-4 hover:text-white transition-all hover:underline"
+          >
+            <li className="text-sm text-gray-300">
+              Internship Management System
+            </li>
           </Link>
           <Link
             href="/"
             className="ml-4 hover:text-white transition-all hover:underline"
           >
-            <li className="text-sm text-gray-300">Ezy-Ecommerce</li>
-          </Link>
-          <Link
-            href="/"
-            className="ml-4 hover:text-white transition-all hover:underline"
-          >
-            <li className="text-sm text-gray-300">Cartzy</li>
+            <li className="text-sm text-gray-300">Cartzy Real-Time Street Vendor Locator </li>
           </Link>
         </FadeInSection>
       </FadeInSection>
