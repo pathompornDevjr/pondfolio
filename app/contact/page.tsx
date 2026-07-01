@@ -30,7 +30,7 @@ const Contact = () => {
   });
 
   const [loading, setLoading] = useState(false);
-  const handleSendMessage = async (data) => {
+  const handleSendMessage = async (data:any) => {
     setLoading(true);
     const loadingToast = toast.loading("Sending message...");
     try {
@@ -54,7 +54,7 @@ const Contact = () => {
 
       // Reset form after successful send
       reset();
-    } catch (error) {
+    } catch (error:any) {
       // Dismiss loading and show error
       toast.dismiss(loadingToast);
       toast.error("Failed to send message. Please try again.", {

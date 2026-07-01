@@ -46,8 +46,8 @@ const stackIconMap = {
   "GoogleMap API": SiGooglemaps,
 };
 
-function StackIcon({ tech, size = 14 }) {
-  const Icon = stackIconMap[tech] || Code2;
+function StackIcon({ tech, size = 14 }: { tech: any; size: number }) {
+  const Icon = (stackIconMap[tech] as any) || Code2;
   return <Icon size={size} className="shrink-0" />;
 }
 
@@ -264,7 +264,7 @@ const projectsData = [
   },
 ];
 
-function ProjectCard({ project, onOpen }) {
+function ProjectCard({ project, onOpen }: { project: any; onOpen: any }) {
   return (
     <div
       onClick={() => onOpen(project)}
@@ -293,7 +293,7 @@ function ProjectCard({ project, onOpen }) {
         </p>
 
         <div className="flex flex-wrap gap-2 mb-4">
-          {project.stack.slice(0, 3).map((tech) => (
+          {project.stack.slice(0, 3).map((tech: any) => (
             <span
               key={tech}
               className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full bg-slate-800 text-slate-300 border border-slate-700"
@@ -317,7 +317,7 @@ function ProjectCard({ project, onOpen }) {
   );
 }
 
-function ProjectModal({ project, onClose }) {
+function ProjectModal({ project, onClose }: { project: any; onClose: any }) {
   if (!project) return null;
 
   return (
@@ -362,7 +362,7 @@ function ProjectModal({ project, onClose }) {
               <Code2 size={16} className="text-emerald-400" /> Tech Stack
             </h4>
             <div className="flex flex-wrap gap-2">
-              {project.stack.map((tech) => (
+              {project.stack.map((tech: any) => (
                 <span
                   key={tech}
                   className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700"
@@ -381,7 +381,7 @@ function ProjectModal({ project, onClose }) {
                 User Roles ({project.userRoles.length})
               </h4>
               <div className="space-y-3">
-                {project.userRoles.map((userRole) => (
+                {project.userRoles.map((userRole: any) => (
                   <div
                     key={userRole.name}
                     className="rounded-xl border border-slate-700 bg-slate-800/50 p-4"
@@ -390,7 +390,7 @@ function ProjectModal({ project, onClose }) {
                       {userRole.name}
                     </p>
                     <ul className="space-y-1.5">
-                      {userRole.capabilities.map((capability) => (
+                      {userRole.capabilities.map((capability: any) => (
                         <li
                           key={capability}
                           className="flex items-start gap-2 text-sm text-slate-300"

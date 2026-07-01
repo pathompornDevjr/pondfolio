@@ -1,6 +1,8 @@
+"use client";
 import heroBg from "@/assets/hero-bg.jpg";
 import Image from "next/image";
 import FadeInSection from "@/components/fade-in-section";
+import getMoreStartUpImg from "@/libs/morestartup-img";
 import {
   FaArrowLeft,
   FaArrowRight,
@@ -20,27 +22,36 @@ import {
   FaNodeJs,
   FaReact,
   FaTiktok,
+  FaTrophy,
   FaYoutube,
 } from "react-icons/fa";
 import Link from "next/link";
 import MeImg from "@/assets/me.png";
-import { Code, Code2, Wind } from "lucide-react";
+import { Code, Code2, Trophy, Wind } from "lucide-react";
 import {
   SiBackbonedotjs,
   SiExpress,
-  SiExpressvpn,
-  SiFrontendmentor,
   SiMongodb,
   SiNextdotjs,
   SiPostgresql,
   SiPrisma,
-  SiProgress,
   SiReact,
   SiTypescript,
 } from "react-icons/si";
+import { useEffect, useState } from "react";
 
 const Home = () => {
 
+  const [images,setImages] = useState<any>([]);
+  useEffect(() => {
+    const getData = async () => {
+      const data = await getMoreStartUpImg();
+      setImages(data)
+    }
+    getData();
+  
+  },[])
+  
   return (
     <div className="w-full h-auto flex flex-col">
       {/* hero section */}
@@ -72,15 +83,15 @@ const Home = () => {
           </FadeInSection>
           <FadeInSection
             className={
-              "flex flex-col lg:flex-row items-center gap-3 lg:gap-8 md:mt-2"
+              "flex flex-col flex-wrap lg:flex-row items-center gap-3 lg:gap-8 md:mt-2"
             }
           >
             <Link
               href="/projects"
               className="p-3 flex items-center gap-3 rounded-xl transition-all shadow-sm text-gray-50 hover:scale-105 bg-gradient-to-r from-blue-600 to-cyan-600"
             >
-              <p> see my projects</p>
-              <FaArrowRight />
+              <p> my projects</p>
+              <Code />
             </Link>
             <a
               href="/files/Pathomporn_Wongsuwan_Resume.pdf"
@@ -90,6 +101,13 @@ const Home = () => {
             >
               My Resume
             </a>
+            <Link
+              href="/#COMPETITIONSACHIEVEMENTS"
+              className="p-3 flex items-center gap-3 rounded-xl transition-all shadow-sm text-gray-50 hover:scale-105 bg-gradient-to-r from-yellow-400 to-amber-500"
+            >
+              <p>achievements</p>
+              <Trophy />
+            </Link>
           </FadeInSection>
         </div>
       </div>
@@ -118,11 +136,11 @@ const Home = () => {
             "Hello! My name is Pathomporn Wongsuwan, but you can call me
             PangPond. I'm currently 21 years old. I began my journey into
             programming at age 18, and since then, I've developed an alumni
-            management system, an e-commerce platform, and a mobile application
-            called Cartzy. I also have several other projects currently in
-            development, which you can explore by{" "}
+            management system, an Internship Management System, and a mobile
+            application called Cartzy. I also have several other projects
+            currently in development, which you can explore by{" "}
             <Link
-              href="/"
+              href="/projects"
               className="underline bg-gradient-to-r from-blue-500 via-cyan-500 to-green-500 bg-clip-text text-transparent"
             >
               clicking here
@@ -168,7 +186,7 @@ const Home = () => {
               <FaTiktok size={25} />
             </Link>
             <Link
-              href="/"
+              href="https://github.com/pathompornDevj"
               className="p-2.5 rounded-full transition-all border border-gray-500 text-white hover:bg-gray-900"
             >
               <FaGithub size={25} />
@@ -229,7 +247,7 @@ const Home = () => {
                 <FaJs color="Yellow" size={20} />
                 <p className="text-sm text-gray-100">JavaScript</p>
               </span>
-               <span className="w-fit p-2 rounded-lg bg-gray-900 border border-gray-600 flex items-center gap-2">
+              <span className="w-fit p-2 rounded-lg bg-gray-900 border border-gray-600 flex items-center gap-2">
                 <SiTypescript color="blue" size={20} />
                 <p className="text-sm text-gray-100">TypeScript</p>
               </span>
@@ -331,6 +349,69 @@ const Home = () => {
           </FadeInSection>
         </div>
       </div>
+
+      {/* COMPETITIONSACHIEVEMENTS */}
+      <div
+        id="COMPETITIONSACHIEVEMENTS"
+        className="w-full flex flex-col items-center justify-center bg-gray-950 py-24 pt-40 lg:px-20 px-5"
+      >
+        <FadeInSection className="flex items-center gap-3 text-white">
+          <FaTrophy size={35} />
+          <p className="lg:text-3xl text-lg font-bold">
+            My Competitions and Achievements
+          </p>
+        </FadeInSection>
+        <p className="text-gray-500">Im very pround of myself</p>
+
+        <div className="w-full mt-8 flex flex-col lg:flex-row items-center lg:items-start gap-3">
+          <div className="w-full lg:w-1/2 rounded-lg shadow-sm h-100 overflow-hidden">
+            <img
+              src="/images/startup_banner.jpg"
+              className="hover:scale-110 rounded-lg transition-all hover:rotate-2 duration-300 w-full h-full object-contain"
+              alt=""
+            />
+          </div>
+          <div className="flex mt-3 lg:mt-0 flex-col text-gray-300 gap-0.5">
+            <p className="text-gray-100 text-lg font-semibold">
+              Startup Thailand League 2025
+            </p>
+            <li className="ml-10">
+              Selected as one of the Top 100 teams nationwide.
+            </li>
+            <li className="ml-10">
+              Received startup development funding of THB 25,000 to support
+              product development and validation.
+            </li>
+            <li className="ml-10">
+              Developed a mobile application using React Native.
+            </li>
+            <li className="ml-10">
+              Showcased the project (HubRe but now is Cartzy) at Siam Paragon, Bangkok.
+            </li>
+            <li className="ml-10">
+              Participated in startup pitching and innovation development
+              activities.
+            </li>
+
+            <li className="ml-10">
+              to check the application
+              <Link href={"/projects"} className="underline ml-1 hover:bg-linear-90 hover:from-orange-500 hover:to-amber-400 transition-all hover:text-transparent bg-clip-text">Click Here </Link>
+            </li>
+
+            <p className="mt-3.5 text-sm text-gray-500">more images</p>
+            <div className="w-full flex flex-wrap gap-2.5">
+             {
+              images.map((i:any,index:number) => (
+                <div key={index} className="rounded-lg overflow-hidden h-35">
+                  <img src={i} className="w-full h-full object-cover" alt="" />
+                </div>
+              ))    
+             }
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="w-full py-24 px-8 lg:px-24 flex flex-col items-center justify-center h-2/3 bg-black">
         <FadeInSection className="p-5 py-14 border border-gray-700 shadow-md shadow-gray-800 w-full lg:w-2/3 flex flex-col gap-1.5 items-center rounded-xl bg-gradient-to-r from-gray-950 to-blue-950">
           <p className="text-xl w-3/4 lg:text-3xl font-bold text-gray-200">

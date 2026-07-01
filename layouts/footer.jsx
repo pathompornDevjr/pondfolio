@@ -56,7 +56,7 @@ const Footer = () => {
               <FaTiktok size={20} />
             </Link>
             <Link
-              href="/"
+              href="https://github.com/pathompornDevjr"
               className="p-2.5 rounded-full transition-all border border-gray-500 text-white hover:bg-gray-900"
             >
               <FaGithub size={20} />
