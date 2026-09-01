@@ -43,8 +43,8 @@ export const translations = {
         "ผมมองว่าความท้าทายในการเขียนโค้ดคือโอกาสในการเรียนรู้ มีความรับผิดชอบ ใส่ใจในรายละเอียด และพร้อมเปิดรับเทคโนโลยีใหม่ๆ เสมอครับ",
       socialTitle: "ติดตามและติดต่อผมได้ทาง",
       infoCards: [
-        { label: "ตำแหน่งที่สนใจ", value: "Full-stack / Frontend / Mobile Developer" },
-        { label: "สถานะการทำงาน", value: "เปิดรับทั้ง Part-time / Remote / Freelance" },
+        { label: "ตำแหน่งที่สนใจ", value: "Full-stack / Software Development / Mobile Developer" },
+        { label: "สถานะการทำงาน", value: "Full-time / Internship / Freelance / Remote" },
         { label: "ที่อยู่ปัจจุบัน", value: "มหาสารคาม, ประเทศไทย" },
         { label: "การศึกษา", value: "มหาวิทยาลัยราชภัฏมหาสารคาม" },
       ],
@@ -137,7 +137,7 @@ export const translations = {
       cardsTitle: "ข้อมูลการติดต่อโดยตรง",
       opportunityTitle: "เปิดรับโอกาสในการทำงาน",
       opportunityDesc:
-        "พร้อมรับงาน Full-time, Part-time (WFH) หรือฟรีแลนซ์ ร่วมพัฒนาโปรเจกต์ทั้งสาย Web และ Mobile",
+        "พร้อมรับงาน Full-time, Internship, Freelance หรือ Remote ร่วมพัฒนาโปรเจกต์ทั้งสาย Web และ Mobile",
       info: {
         email: "อีเมล",
         phone: "เบอร์โทรศัพท์",
@@ -201,8 +201,8 @@ export const translations = {
         "I view every technical challenge as an opportunity for continuous learning, striving for clean architecture, reliable performance, and intuitive interfaces.",
       socialTitle: "Connect With Me",
       infoCards: [
-        { label: "Desired Roles", value: "Full-stack / Frontend / Mobile Developer" },
-        { label: "Availability", value: "Open for Part-time / Remote / Freelance" },
+        { label: "Desired Roles", value: "Full-stack / Software Development / Mobile Developer" },
+        { label: "Availability", value: "Full-time / Internship / Freelance / Remote" },
         { label: "Location", value: "Maha Sarakham, Thailand" },
         { label: "Education", value: "Rajabhat Maha Sarakham University" },
       ],
@@ -295,7 +295,7 @@ export const translations = {
       cardsTitle: "Direct Contact Information",
       opportunityTitle: "Open for Opportunities",
       opportunityDesc:
-        "Available for Full-time, Part-time (WFH), or Freelance roles building Web & Mobile solutions.",
+        "Available for Full-time, Internship, Freelance, or Remote roles building Web & Mobile solutions.",
       info: {
         email: "Email",
         phone: "Phone",
