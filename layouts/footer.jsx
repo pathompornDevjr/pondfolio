@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, Mail, MapPin, ArrowUpRight } from "lucide-react";
 import {
   FaFacebookF,
@@ -9,6 +10,7 @@ import {
   FaLinkedin,
 } from "react-icons/fa";
 import { useLanguage } from "@/context/LanguageContext";
+import MeImg from "@/assets/me.png";
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -47,7 +49,15 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
           {/* Brand Col */}
           <div className="flex flex-col gap-4 lg:col-span-1">
-            <Link href="/" className="inline-flex items-center gap-2">
+            <Link href="/" className="inline-flex items-center gap-2.5 group">
+              <div className="relative w-9 h-9 rounded-full overflow-hidden border-2 border-sky-500/60 dark:border-sky-400/60 shadow-xs group-hover:scale-105 transition-transform shrink-0">
+                <Image
+                  src={MeImg}
+                  alt="Pondfolio Avatar Logo"
+                  fill
+                  className="object-cover object-top"
+                />
+              </div>
               <span className="text-2xl font-bold bg-gradient-to-r from-sky-500 via-teal-500 to-emerald-500 bg-clip-text text-transparent">
                 Pondfolio
               </span>

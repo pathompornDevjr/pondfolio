@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { FaBars } from "react-icons/fa";
 import { FaX } from "react-icons/fa6";
@@ -8,6 +9,7 @@ import { FiSun, FiMoon, FiGlobe } from "react-icons/fi";
 import { usePathname, useRouter } from "next/navigation";
 import { useTheme } from "@/context/ThemeContext";
 import { useLanguage } from "@/context/LanguageContext";
+import MeImg from "@/assets/me.png";
 
 const Navbar = () => {
   const [showResponsiveMenu, setShowResponsiveMenu] = useState(false);
@@ -58,12 +60,21 @@ const Navbar = () => {
         {/* Brand Logo */}
         <Link
           href="/"
-          className="group flex items-center gap-2 text-xl sm:text-2xl font-extrabold tracking-tight"
+          className="group flex items-center gap-2.5 text-xl sm:text-2xl font-extrabold tracking-tight"
         >
+          <div className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-full overflow-hidden border-2 border-sky-500/60 dark:border-sky-400/60 shadow-xs group-hover:scale-105 transition-transform shrink-0">
+            <Image
+              src={MeImg}
+              alt="Pondfolio Avatar Logo"
+              fill
+              className="object-cover object-top"
+              priority
+            />
+          </div>
           <span className="bg-gradient-to-r from-sky-500 via-teal-500 to-emerald-500 bg-clip-text text-transparent group-hover:opacity-90 transition-opacity">
             Pondfolio
           </span>
-          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse hidden sm:inline-block" />
         </Link>
 
         {/* Desktop Navigation Links */}

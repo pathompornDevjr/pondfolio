@@ -26,6 +26,8 @@ import {
   SiExpo,
   SiGoogle,
   SiGooglemaps,
+  SiMysql,
+  SiDocker,
 } from "react-icons/si";
 import FadeInSection from "@/components/fade-in-section";
 import { useLanguage } from "@/context/LanguageContext";
@@ -35,6 +37,7 @@ const stackIconMap: Record<string, any> = {
   "Tailwind CSS": SiTailwindcss,
   "Bun Runtime": SiBun,
   Bun: SiBun,
+  "Elysia.js": SiBun,
   PostgreSQL: SiPostgresql,
   "Prisma ORM": SiPrisma,
   Prisma: SiPrisma,
@@ -43,6 +46,9 @@ const stackIconMap: Record<string, any> = {
   "Node.js": SiNodedotjs,
   Express: SiExpress,
   MongoDB: SiMongodb,
+  MySQL: SiMysql,
+  "MariaDB / MySQL": SiMysql,
+  Docker: SiDocker,
   Expo: SiExpo,
   "Google API": SiGoogle,
   "GoogleMap API": SiGooglemaps,
@@ -55,6 +61,7 @@ function StackIcon({ tech, size = 14 }: { tech: string; size?: number }) {
 
 // Bilingual Project Data
 const getProjectsData = (lang: "th" | "en") => [
+
   {
     id: "alumni-system",
     type: "web",
@@ -88,83 +95,83 @@ const getProjectsData = (lang: "th" | "en") => [
     userRoles:
       lang === "th"
         ? [
-            {
-              name: "ศิษย์เก่า (Alumni)",
-              capabilities: [
-                "ลงทะเบียนและเข้าสู่ระบบด้วยความปลอดภัย",
-                "จัดการข้อมูลส่วนตัว ข้อมูลติดต่อ และการทำงานปัจจุบัน",
-                "ตั้งค่าความเป็นส่วนตัวของข้อมูล",
-                "ค้นหาและเชื่อมโยงเครือข่ายศิษย์เก่าในสาขาวิชา",
-                "รับข่าวสารและประกาศจากทางมหาวิทยาลัย",
-                "ส่งและรับข้อความข่าวสารผ่านระบบอีเมล",
-              ],
-            },
-            {
-              name: "อาจารย์ / สาขาวิชา (Lecturer)",
-              capabilities: [
-                "ดูแดชบอร์ดสถิติการมีงานทำของศิษย์เก่าระดับสาขาวิชา",
-                "ค้นหาและตรวจสอบสถานะการทำงานของศิษย์เก่า",
-                "สร้างและส่งออกรายงานศิษย์เก่าประจำสาขา",
-                "ส่งอีเมลแจ้งเตือนและข่าวสารเฉพาะกลุ่ม",
-              ],
-            },
-            {
-              name: "ผู้บริหาร (Executive)",
-              capabilities: [
-                "ดูแดชบอร์ดภาพรวมสถิติและแนวโน้มระดับมหาวิทยาลัย",
-                "เข้าถึงรายงานข้อมูลแยกตามคณะและสาขาวิชา",
-                "ส่งข้อความข่าวสารประชาสัมพันธ์ภาพรวม (Broadcast)",
-              ],
-            },
-            {
-              name: "ผู้ดูแลระบบ (Administrator)",
-              capabilities: [
-                "อนุมัติและจัดการสิทธิ์ผู้ใช้งานทุกระดับ",
-                "นำเข้าข้อมูลศิษย์เก่าจากไฟล์ Excel และส่งออกรายงานสถิติ",
-                "ส่งอีเมลแจ้งเตือนแบบกลุ่ม (Bulk Email)",
-                "ตั้งค่าระบบสำรองข้อมูลอัตโนมัติขึ้น Google Drive",
-                "ดูแลรักษาความปลอดภัยและความสมบูรณ์ของฐานข้อมูล",
-              ],
-            },
-          ]
+          {
+            name: "ศิษย์เก่า (Alumni)",
+            capabilities: [
+              "ลงทะเบียนและเข้าสู่ระบบด้วยความปลอดภัย",
+              "จัดการข้อมูลส่วนตัว ข้อมูลติดต่อ และการทำงานปัจจุบัน",
+              "ตั้งค่าความเป็นส่วนตัวของข้อมูล",
+              "ค้นหาและเชื่อมโยงเครือข่ายศิษย์เก่าในสาขาวิชา",
+              "รับข่าวสารและประกาศจากทางมหาวิทยาลัย",
+              "ส่งและรับข้อความข่าวสารผ่านระบบอีเมล",
+            ],
+          },
+          {
+            name: "อาจารย์ / สาขาวิชา (Lecturer)",
+            capabilities: [
+              "ดูแดชบอร์ดสถิติการมีงานทำของศิษย์เก่าระดับสาขาวิชา",
+              "ค้นหาและตรวจสอบสถานะการทำงานของศิษย์เก่า",
+              "สร้างและส่งออกรายงานศิษย์เก่าประจำสาขา",
+              "ส่งอีเมลแจ้งเตือนและข่าวสารเฉพาะกลุ่ม",
+            ],
+          },
+          {
+            name: "ผู้บริหาร (Executive)",
+            capabilities: [
+              "ดูแดชบอร์ดภาพรวมสถิติและแนวโน้มระดับมหาวิทยาลัย",
+              "เข้าถึงรายงานข้อมูลแยกตามคณะและสาขาวิชา",
+              "ส่งข้อความข่าวสารประชาสัมพันธ์ภาพรวม (Broadcast)",
+            ],
+          },
+          {
+            name: "ผู้ดูแลระบบ (Administrator)",
+            capabilities: [
+              "อนุมัติและจัดการสิทธิ์ผู้ใช้งานทุกระดับ",
+              "นำเข้าข้อมูลศิษย์เก่าจากไฟล์ Excel และส่งออกรายงานสถิติ",
+              "ส่งอีเมลแจ้งเตือนแบบกลุ่ม (Bulk Email)",
+              "ตั้งค่าระบบสำรองข้อมูลอัตโนมัติขึ้น Google Drive",
+              "ดูแลรักษาความปลอดภัยและความสมบูรณ์ของฐานข้อมูล",
+            ],
+          },
+        ]
         : [
-            {
-              name: "Alumni",
-              capabilities: [
-                "Register and authenticate user accounts securely",
-                "Manage personal profile, contact information, and career history",
-                "Control privacy settings and visibility of personal records",
-                "Search directory and network with fellow alumni",
-                "Receive university announcements and email notifications",
-              ],
-            },
-            {
-              name: "Lecturer",
-              capabilities: [
-                "View department-level alumni employment statistics dashboard",
-                "Search and monitor alumni information and contacts",
-                "Generate department alumni reports",
-                "Send targeted notifications and announcements to department alumni",
-              ],
-            },
-            {
-              name: "Executive",
-              capabilities: [
-                "View university-wide analytics and employment metrics dashboard",
-                "Access cross-faculty summaries and download statistics",
-                "Broadcast announcements to selected groups",
-              ],
-            },
-            {
-              name: "Administrator",
-              capabilities: [
-                "Manage user roles, approvals, and permissions",
-                "Batch import alumni data from Excel sheets & export reports",
-                "Send automated bulk email communications",
-                "Configure automated Google Drive backups and disaster recovery",
-              ],
-            },
-          ],
+          {
+            name: "Alumni",
+            capabilities: [
+              "Register and authenticate user accounts securely",
+              "Manage personal profile, contact information, and career history",
+              "Control privacy settings and visibility of personal records",
+              "Search directory and network with fellow alumni",
+              "Receive university announcements and email notifications",
+            ],
+          },
+          {
+            name: "Lecturer",
+            capabilities: [
+              "View department-level alumni employment statistics dashboard",
+              "Search and monitor alumni information and contacts",
+              "Generate department alumni reports",
+              "Send targeted notifications and announcements to department alumni",
+            ],
+          },
+          {
+            name: "Executive",
+            capabilities: [
+              "View university-wide analytics and employment metrics dashboard",
+              "Access cross-faculty summaries and download statistics",
+              "Broadcast announcements to selected groups",
+            ],
+          },
+          {
+            name: "Administrator",
+            capabilities: [
+              "Manage user roles, approvals, and permissions",
+              "Batch import alumni data from Excel sheets & export reports",
+              "Send automated bulk email communications",
+              "Configure automated Google Drive backups and disaster recovery",
+            ],
+          },
+        ],
   },
   {
     id: "lawintern-system",
@@ -198,79 +205,79 @@ const getProjectsData = (lang: "th" | "en") => [
     userRoles:
       lang === "th"
         ? [
-            {
-              name: "นักศึกษา (Student)",
-              capabilities: [
-                "ค้นหาสถานประกอบการและตำแหน่งงานฝึกงานที่เปิดรับ",
-                "ยื่นใบสมัครและติดตามสถานะการตอบรับ",
-                "บันทึกและแก้ไขบันทึกการฝึกงานประจำวัน (Daily Log)",
-                "ตรวจสอบตารางการนิเทศงานของอาจารย์",
-                "ดูผลการประเมินและดาวน์โหลดหนังสือรับรองการฝึกงาน",
-              ],
-            },
-            {
-              name: "อาจารย์นิเทศก์ (Supervisor Lecturer)",
-              capabilities: [
-                "ตรวจสอบตารางการนิเทศงานและแผนการเข้าตรวจเยี่ยมนักศึกษา",
-                "ตรวจและให้ข้อเสนอแนะบันทึกการฝึกงานของนักศึกษา",
-                "ประเมินผลการฝึกงานและบันทึกคะแนนในระบบ",
-                "ดูอันดับความพึงพอใจของสถานประกอบการ",
-              ],
-            },
-            {
-              name: "สถานประกอบการ (Organization)",
-              capabilities: [
-                "ลงทะเบียนสถานประกอบการและประกาศตำแหน่งฝึกงาน",
-                "ตรวจและอนุมัติบันทึกการฝึกงานประจำวันของนักศึกษา",
-                "ประเมินพฤติกรรมและผลการปฏิบัติงานของนักศึกษา",
-              ],
-            },
-            {
-              name: "ผู้ดูแลระบบ (Administrator)",
-              capabilities: [
-                "กำหนดรอบและช่วงเวลาการสมัครฝึกงาน",
-                "จัดการข้อมูลนักศึกษา อาจารย์ และสถานประกอบการ",
-                "จัดสรรอาจารย์นิเทศก์ประจำกลุ่มนักศึกษา",
-                "สร้างและจัดการแบบฟอร์มการประเมินผลออนไลน์",
-              ],
-            },
-          ]
+          {
+            name: "นักศึกษา (Student)",
+            capabilities: [
+              "ค้นหาสถานประกอบการและตำแหน่งงานฝึกงานที่เปิดรับ",
+              "ยื่นใบสมัครและติดตามสถานะการตอบรับ",
+              "บันทึกและแก้ไขบันทึกการฝึกงานประจำวัน (Daily Log)",
+              "ตรวจสอบตารางการนิเทศงานของอาจารย์",
+              "ดูผลการประเมินและดาวน์โหลดหนังสือรับรองการฝึกงาน",
+            ],
+          },
+          {
+            name: "อาจารย์นิเทศก์ (Supervisor Lecturer)",
+            capabilities: [
+              "ตรวจสอบตารางการนิเทศงานและแผนการเข้าตรวจเยี่ยมนักศึกษา",
+              "ตรวจและให้ข้อเสนอแนะบันทึกการฝึกงานของนักศึกษา",
+              "ประเมินผลการฝึกงานและบันทึกคะแนนในระบบ",
+              "ดูอันดับความพึงพอใจของสถานประกอบการ",
+            ],
+          },
+          {
+            name: "สถานประกอบการ (Organization)",
+            capabilities: [
+              "ลงทะเบียนสถานประกอบการและประกาศตำแหน่งฝึกงาน",
+              "ตรวจและอนุมัติบันทึกการฝึกงานประจำวันของนักศึกษา",
+              "ประเมินพฤติกรรมและผลการปฏิบัติงานของนักศึกษา",
+            ],
+          },
+          {
+            name: "ผู้ดูแลระบบ (Administrator)",
+            capabilities: [
+              "กำหนดรอบและช่วงเวลาการสมัครฝึกงาน",
+              "จัดการข้อมูลนักศึกษา อาจารย์ และสถานประกอบการ",
+              "จัดสรรอาจารย์นิเทศก์ประจำกลุ่มนักศึกษา",
+              "สร้างและจัดการแบบฟอร์มการประเมินผลออนไลน์",
+            ],
+          },
+        ]
         : [
-            {
-              name: "Student",
-              capabilities: [
-                "Browse approved internship host companies and open positions",
-                "Submit applications and track admission approval status",
-                "Submit and update daily internship progress logbooks",
-                "Check supervisor inspection schedules",
-                "View evaluation results and download completion certificates",
-              ],
-            },
-            {
-              name: "Supervisor Lecturer",
-              capabilities: [
-                "Manage inspection schedules and review assigned students",
-                "Review, comment, and verify student daily log entries",
-                "Conduct online evaluations and submit final scores",
-              ],
-            },
-            {
-              name: "Host Organization",
-              capabilities: [
-                "Post available internship openings and requirements",
-                "Verify and sign off on student daily attendance and logs",
-                "Submit workplace performance appraisals",
-              ],
-            },
-            {
-              name: "Administrator",
-              capabilities: [
-                "Configure internship terms, periods, and criteria",
-                "Pair students with qualified supervising lecturers",
-                "Manage evaluation matrices and generate compliance reports",
-              ],
-            },
-          ],
+          {
+            name: "Student",
+            capabilities: [
+              "Browse approved internship host companies and open positions",
+              "Submit applications and track admission approval status",
+              "Submit and update daily internship progress logbooks",
+              "Check supervisor inspection schedules",
+              "View evaluation results and download completion certificates",
+            ],
+          },
+          {
+            name: "Supervisor Lecturer",
+            capabilities: [
+              "Manage inspection schedules and review assigned students",
+              "Review, comment, and verify student daily log entries",
+              "Conduct online evaluations and submit final scores",
+            ],
+          },
+          {
+            name: "Host Organization",
+            capabilities: [
+              "Post available internship openings and requirements",
+              "Verify and sign off on student daily attendance and logs",
+              "Submit workplace performance appraisals",
+            ],
+          },
+          {
+            name: "Administrator",
+            capabilities: [
+              "Configure internship terms, periods, and criteria",
+              "Pair students with qualified supervising lecturers",
+              "Manage evaluation matrices and generate compliance reports",
+            ],
+          },
+        ],
   },
   {
     id: "cartzy",
@@ -298,47 +305,147 @@ const getProjectsData = (lang: "th" | "en") => [
     userRoles:
       lang === "th"
         ? [
-            {
-              name: "พ่อค้าแม่ค้ารถเข็น (Vendor)",
-              capabilities: [
-                "เปิด-ปิดสถานะร้านค้า พร้อมอัปเดตตำแหน่ง GPS บนแผนที่แบบ Real-time",
-                "จัดการโปรไฟล์ร้านค้า เมนู รูปภาพ และเวลาทำการ",
-                "สร้างและจัดการโปรโมชั่นส่วนลดพิเศษ",
-                "ดูสถิติเมนูขายดีและคำแนะนำจุดจอดขายที่มีลูกค้าหนาแน่น",
-                "ติดตามจำนวนผู้ติดตามและคะแนนรีวิวจากลูกค้า",
-              ],
-            },
-            {
-              name: "ลูกค้า / ผู้ใช้งานทั่วไป (Customer)",
-              capabilities: [
-                "ค้นหาร้านค้ารถเข็นและสตรีทฟู้ดใกล้ตัวบนแผนที่แบบสดๆ",
-                "ดูตำแหน่งร้านค้าที่กำลังเคลื่อนที่หรือเปิดบริการอยู่",
-                "กดติดตามร้านโปรดเพื่อรับการแจ้งเตือนเมื่อเปิดร้าน",
-                "ดูรายละเอียดเมนู ราคา และรีวิวจากผู้ใช้งานคนอื่น",
-              ],
-            },
-          ]
+          {
+            name: "พ่อค้าแม่ค้ารถเข็น (Vendor)",
+            capabilities: [
+              "เปิด-ปิดสถานะร้านค้า พร้อมอัปเดตตำแหน่ง GPS บนแผนที่แบบ Real-time",
+              "จัดการโปรไฟล์ร้านค้า เมนู รูปภาพ และเวลาทำการ",
+              "สร้างและจัดการโปรโมชั่นส่วนลดพิเศษ",
+              "ดูสถิติเมนูขายดีและคำแนะนำจุดจอดขายที่มีลูกค้าหนาแน่น",
+              "ติดตามจำนวนผู้ติดตามและคะแนนรีวิวจากลูกค้า",
+            ],
+          },
+          {
+            name: "ลูกค้า / ผู้ใช้งานทั่วไป (Customer)",
+            capabilities: [
+              "ค้นหาร้านค้ารถเข็นและสตรีทฟู้ดใกล้ตัวบนแผนที่แบบสดๆ",
+              "ดูตำแหน่งร้านค้าที่กำลังเคลื่อนที่หรือเปิดบริการอยู่",
+              "กดติดตามร้านโปรดเพื่อรับการแจ้งเตือนเมื่อเปิดร้าน",
+              "ดูรายละเอียดเมนู ราคา และรีวิวจากผู้ใช้งานคนอื่น",
+            ],
+          },
+        ]
         : [
-            {
-              name: "Street Cart Vendor",
-              capabilities: [
-                "Toggle shop open/closed with real-time GPS location streaming",
-                "Manage menu items, pricing, photos, and regular operating hours",
-                "Launch custom promotional campaigns",
-                "Access analytics on popular dishes and high-traffic hotspot suggestions",
-                "Review follower counts and customer ratings",
-              ],
-            },
-            {
-              name: "Customer",
-              capabilities: [
-                "Discover nearby open street food carts on a live interactive map",
-                "Track moving vendors in real time as they change locations",
-                "Follow favorite food carts to receive instant opening alerts",
-                "Explore menu pricing, food photos, and community reviews",
-              ],
-            },
-          ],
+          {
+            name: "Street Cart Vendor",
+            capabilities: [
+              "Toggle shop open/closed with real-time GPS location streaming",
+              "Manage menu items, pricing, photos, and regular operating hours",
+              "Launch custom promotional campaigns",
+              "Access analytics on popular dishes and high-traffic hotspot suggestions",
+              "Review follower counts and customer ratings",
+            ],
+          },
+          {
+            name: "Customer",
+            capabilities: [
+              "Discover nearby open street food carts on a live interactive map",
+              "Track moving vendors in real time as they change locations",
+              "Follow favorite food carts to receive instant opening alerts",
+              "Explore menu pricing, food photos, and community reviews",
+            ],
+          },
+        ],
+  },
+  {
+    id: "qrshop",
+    type: "web",
+    title:
+      lang === "th"
+        ? "QRShop (Food Ordering & Restaurant Management SaaS)"
+        : "QRShop (Food Ordering & Restaurant Management SaaS)",
+    tag: lang === "th" ? "Web Application (SaaS)" : "Web Application (SaaS)",
+    cover: "/images/qrshop_thumnail.png",
+    summary:
+      lang === "th"
+        ? "แพลตฟอร์มสั่งอาหารผ่าน QR Code และบริหารจัดการร้านอาหารครบวงจร (Multi-tenant SaaS) พร้อมระบบจอครัว KDS เรียลไทม์ และระบบจัดผังร้าน 2D"
+        : "An all-in-one multi-tenant SaaS for table QR ordering, real-time Kitchen Display System (KDS), and interactive 2D restaurant floor plan editor.",
+    description:
+      lang === "th"
+        ? "QRShop คือแพลตฟอร์ม Food Ordering & Restaurant Management System แบบครบวงจร (SaaS / Multi-tenant) ที่ช่วยให้ร้านอาหารสามารถจัดการเมนู, ผังโต๊ะ 2D, คิวออเดอร์ในครัวแบบ Real-time ด้วย WebSocket / SSE พร้อมระบบสังเคราะห์เสียงพูดภาษาไทย (Thai TTS), ระบบชำระเงิน PromptPay/เงินสด และให้ลูกค้าสามารถสแกน QR Code สั่งอาหารได้ทันทีจากมือถือโดยไม่ต้องติดตั้งแอป พร้อมระบบป้องกันด้วย Geofencing GPS"
+        : "QRShop is an all-in-one Food Ordering & Restaurant Management platform (SaaS / Multi-tenant). It empowers restaurants with real-time Kitchen Display System (KDS), interactive 2D floor plan editor, live Thai Text-to-Speech order alerts, and dynamic table QR ordering with GPS geofencing verification.",
+    stack: [
+      "Next.js",
+      "Tailwind CSS",
+      "React",
+      "Elysia.js",
+      "Bun Runtime",
+      "Prisma ORM",
+      "MySQL",
+      "Docker",
+    ],
+    role: lang === "th" ? "Full-stack Developer (Sole Developer)" : "Full-stack Developer",
+    liveUrl: "https://frontend-qrshop.vercel.app/",
+    githubUrl: "#",
+    showCode: false,
+    userRoles:
+      lang === "th"
+        ? [
+          {
+            name: "1. สำหรับลูกค้า (Customer Experience - Mobile First)",
+            capabilities: [
+              "สแกน QR Code ประจำโต๊ะ (Table QR Ordering) ด้วย Table Token ป้องกันการสลับโต๊ะ",
+              "ตรวจจับพิกัด GPS (Geofencing) ป้องกันการสั่งอาหารจากนอกบริเวณร้าน",
+              "LINE In-App Browser Handler ตรวจจับและแจ้งเตือนให้เปิดผ่าน External Browser เพื่อความลื่นไหล",
+              "เมนูดิจิทัลแบบ Interactive ค้นหา, แยกหมวดหมู่, เมนูแนะนำ, จัดการตัวเลือกพิเศษ (Options / Add-ons)",
+              "ระบบตะกร้าและชำระเงิน คำนวณราคาเรียลไทม์ รองรับเงินสดและ PromptPay QR Code พร้อมอัปโหลดสลิป",
+              "ติดตามสถานะอาหารแบบ Real-time (รอรับออเดอร์ ➔ กำลังทำ ➔ พร้อมเสิร์ฟ ➔ สำเร็จ)",
+            ],
+          },
+          {
+            name: "2. สำหรับเจ้าของร้าน / พนักงาน (Restaurant & Kitchen Portal)",
+            capabilities: [
+              "ระบบจอครัวและจัดการคิวเรียลไทม์ (KDS) รับออเดอร์ทันทีผ่าน WebSocket / SSE ไม่ต้องรีเฟรชหน้าจอ",
+              "ระบบสังเคราะห์เสียงพูดภาษาไทย (Thai Text-to-Speech: TTS) อ่านขานหมายเลขโต๊ะและรายการอาหาร",
+              "โปรแกรมจัดผังร้านและโต๊ะอาหาร 2 มิติ (2D Floor Plan Editor) แบบ Drag & Drop กำหนดขนาด, องศา, โซน, ที่นั่ง",
+              "ระบบจัดการและออกแบบ QR Code ประจำโต๊ะ (Table QR Designer) สร้าง Token และการ์ดสำหรับพิมพ์วางบนโต๊ะ",
+              "ระบบจัดการเมนูและหมวดหมู่ พร้อมสวิตช์เปิด-ปิดความพร้อมจำหน่าย (Available / Out of Stock) และจัดการ Option",
+              "รายงานยอดขายและสถิติ (Sales Analytics) สรุปรายรับ, สถิติเมนูยอดนิยม, และช่องทางการชำระเงิน",
+              "ปรับแต่งแบรนด์และธีมร้าน (Customization & Themes) โลโก้, ภาพปก, โทนสีร้าน (Color Themes), พิกัด GPS",
+            ],
+          },
+          {
+            name: "3. สำหรับผู้ดูแลระบบส่วนกลาง (Super Admin Portal)",
+            capabilities: [
+              "Admin Dashboard ภาพรวมจำนวนร้านค้า ผู้ใช้งาน และยอดการสมัครสมาชิกทั้งหมดในระบบ",
+              "ระบบอนุมัติร้านค้าและแพ็กเกจ (Approvals & Renewals) ตรวจสอบสลิปการสมัครสมาชิกและต่ออายุการใช้งาน",
+              "จัดการร้านค้าและผู้ใช้งาน (Restaurants & Users Management) เปิด/ปิดสถานะร้าน และจัดการบทบาทสิทธิ์ (Roles)",
+            ],
+          },
+        ]
+        : [
+          {
+            name: "1. Customer Experience (Mobile First)",
+            capabilities: [
+              "Scan dynamic Table QR codes with secure Table Token to access instant table ordering",
+              "GPS Geofencing verification to ensure customer orders within restaurant proximity",
+              "LINE In-App Browser Handler prompting seamless redirect to external browsers",
+              "Interactive digital menu with categories, popular items, search, and dynamic add-on options",
+              "Real-time cart calculation, cash / PromptPay QR payment, and payment slip upload",
+              "Live real-time order tracking (Pending ➔ In Progress ➔ Ready ➔ Completed)",
+            ],
+          },
+          {
+            name: "2. Restaurant & Kitchen Portal",
+            capabilities: [
+              "Kitchen Display System (KDS) receiving live orders via WebSocket & Server-Sent Events (SSE)",
+              "Thai Text-to-Speech (TTS) voice synthesizer announcing new orders and table numbers aloud",
+              "Interactive 2D Floor Plan Editor with Drag & Drop canvas for customizable table layouts & zones",
+              "Table QR Designer to generate dynamic tokens and print-ready table QR stand designs",
+              "Comprehensive menu, option modifiers, and real-time inventory availability toggling",
+              "Sales analytics dashboard with revenue graphs, top-selling items, and payment metrics",
+              "Brand personalization with live color theme picker, cover banners, and geofencing coordinates",
+            ],
+          },
+          {
+            name: "3. Super Admin Portal",
+            capabilities: [
+              "Super Admin Dashboard overviewing multi-tenant restaurants, users, and subscription stats",
+              "Store subscription approval and renewal management with slip verification",
+              "Global restaurant store management and Role-Based Access Control (RBAC)",
+            ],
+          },
+        ],
   },
 ];
 
@@ -598,31 +705,28 @@ export default function ProjectsPage() {
           <div className="inline-flex items-center p-1 rounded-xl bg-slate-200/80 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/80 mt-6 text-xs font-semibold">
             <button
               onClick={() => setFilter("all")}
-              className={`px-4 py-2 rounded-lg transition-all ${
-                filter === "all"
+              className={`px-4 py-2 rounded-lg transition-all ${filter === "all"
                   ? "bg-white dark:bg-slate-900 text-sky-600 dark:text-sky-400 shadow-xs"
                   : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
-              }`}
+                }`}
             >
               {t.projects.filterAll}
             </button>
             <button
               onClick={() => setFilter("web")}
-              className={`px-4 py-2 rounded-lg transition-all ${
-                filter === "web"
+              className={`px-4 py-2 rounded-lg transition-all ${filter === "web"
                   ? "bg-white dark:bg-slate-900 text-sky-600 dark:text-sky-400 shadow-xs"
                   : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
-              }`}
+                }`}
             >
               {t.projects.filterWeb}
             </button>
             <button
               onClick={() => setFilter("mobile")}
-              className={`px-4 py-2 rounded-lg transition-all ${
-                filter === "mobile"
+              className={`px-4 py-2 rounded-lg transition-all ${filter === "mobile"
                   ? "bg-white dark:bg-slate-900 text-sky-600 dark:text-sky-400 shadow-xs"
                   : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
-              }`}
+                }`}
             >
               {t.projects.filterMobile}
             </button>

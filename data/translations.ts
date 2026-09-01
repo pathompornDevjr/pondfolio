@@ -26,7 +26,7 @@ export const translations = {
       getInTouch: "ส่งข้อความติดต่อ",
       achievementsBtn: "ผลงานรางวัล",
       quickStats: {
-        projects: "3+ โปรเจกต์หลักที่เปิดใช้งานจริง",
+        projects: "4+ โปรเจกต์หลักที่เปิดใช้งานจริง",
         award: "Top 100 Startup Thailand League 2025",
         status: "พร้อมรับงาน / โอกาสร่วมงานใหม่",
       },
@@ -38,7 +38,7 @@ export const translations = {
       bioP1:
         "สวัสดีครับ! ผมชื่อ ปฐมพร วงสุวรรณ (ปังปอนด์) ปัจจุบันอายุ 21 ปี กำลังศึกษาและพัฒนาตนเองในสายงานซอฟต์แวร์อย่างต่อเนื่อง",
       bioP2:
-        "ผมเริ่มเขียนโปรแกรมตั้งแต่อายุ 18 ปี โดยมีความหลงใหลในการพัฒนาระบบที่แก้ไขปัญหาได้จริง ที่ผ่านมาได้พัฒนาทั้ง ระบบสารสนเทศเครือข่ายศิษย์เก่า (Alumni System), ระบบบริหารจัดการการฝึกงาน (Internship Management System) และแอปพลิเคชัน Cartzy (แพลตฟอร์มค้นหาและระบุตำแหน่งร้านค้ารถเข็นแบบ Real-time GPS)",
+        "ผมเริ่มเขียนโปรแกรมตั้งแต่อายุ 18 ปี โดยมีความหลงใหลในการพัฒนาระบบที่แก้ไขปัญหาได้จริง ที่ผ่านมาได้พัฒนาทั้ง แพลตฟอร์มสั่งอาหาร QRShop (Food Ordering & Restaurant Management SaaS), ระบบสารสนเทศเครือข่ายศิษย์เก่า (Alumni System), ระบบบริหารจัดการการฝึกงาน (Internship Management System) และแอปพลิเคชัน Cartzy (แพลตฟอร์มค้นหาและระบุตำแหน่งร้านค้ารถเข็นแบบ Real-time GPS)",
       bioP3:
         "ผมมองว่าความท้าทายในการเขียนโค้ดคือโอกาสในการเรียนรู้ มีความรับผิดชอบ ใส่ใจในรายละเอียด และพร้อมเปิดรับเทคโนโลยีใหม่ๆ เสมอครับ",
       socialTitle: "ติดตามและติดต่อผมได้ทาง",
@@ -184,7 +184,7 @@ export const translations = {
       getInTouch: "Get In Touch",
       achievementsBtn: "Achievements",
       quickStats: {
-        projects: "3+ Production Projects",
+        projects: "4+ Production Projects",
         award: "Top 100 Startup Thailand League 2025",
         status: "Open for Opportunities",
       },
@@ -196,7 +196,7 @@ export const translations = {
       bioP1:
         "Hello! My name is Pathomporn Wongsuwan (PangPond), currently 21 years old and deeply passionate about software engineering.",
       bioP2:
-        "I started coding at 18 and have since built end-to-end applications including the Alumni Network Information System, Internship Management System, and Cartzy — a real-time GPS vendor discovery mobile platform.",
+        "I started coding at 18 and have since built end-to-end applications including QRShop (Food Ordering & Restaurant Management SaaS), Alumni Network Information System, Internship Management System, and Cartzy — a real-time GPS vendor discovery mobile platform.",
       bioP3:
         "I view every technical challenge as an opportunity for continuous learning, striving for clean architecture, reliable performance, and intuitive interfaces.",
       socialTitle: "Connect With Me",
