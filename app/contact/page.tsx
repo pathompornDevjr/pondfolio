@@ -46,15 +46,19 @@ export default function ContactPage() {
     setLoading(true);
     const loadingToast = toast.loading(t.contact.sending);
     try {
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_6ssbld3";
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_okbkone";
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "cgIV56gtnk5b2bvwN";
+
       await emailjs.send(
-        "service_6ssbld3",
-        "template_okbkone",
+        serviceId,
+        templateId,
         {
           sender_name: data.sender_name,
           sender_email: data.to_email,
           sender_message: data.message,
         },
-        "WpZ8w49r4HNVwCqlh"
+        publicKey
       );
 
       toast.dismiss(loadingToast);

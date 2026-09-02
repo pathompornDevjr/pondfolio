@@ -45,6 +45,7 @@ import {
   SiJsonwebtokens,
   SiGit,
   SiIntellijidea,
+  SiRedis,
 } from "react-icons/si";
 import {
   Code2,
@@ -489,6 +490,9 @@ export default function HomePage() {
                   </span>
                   <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">
                     <SiPrisma size={14} className="text-teal-500" /> Prisma ORM
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">
+                    <SiRedis size={14} className="text-red-500" /> Upstash Redis
                   </span>
                 </div>
               </div>
