@@ -217,6 +217,7 @@ export const translations = {
       info: {
         email: "อีเมล",
         phone: "เบอร์โทรศัพท์",
+        line: "ไลน์ (LINE ID)",
         facebook: "เฟซบุ๊ก",
         address: "ที่อยู่",
         addressValue: "มหาสารคาม, ประเทศไทย",
@@ -451,6 +452,7 @@ export const translations = {
       info: {
         email: "Email",
         phone: "Phone",
+        line: "LINE ID",
         facebook: "Facebook",
         address: "Location",
         addressValue: "Maha Sarakham, Thailand",

@@ -13,7 +13,7 @@ import {
   FileText,
   AlertCircle,
 } from "lucide-react";
-import { FaFacebookF } from "react-icons/fa";
+import { FaFacebookF, FaLine } from "react-icons/fa";
 import FadeInSection from "@/components/fade-in-section";
 import { useLanguage } from "@/context/LanguageContext";
 import { useTheme } from "@/context/ThemeContext";
@@ -309,6 +309,26 @@ export default function ContactPage() {
                   </p>
                   <p className="text-sm font-bold text-slate-800 dark:text-slate-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                     Pathomporn Wongsuwan
+                  </p>
+                </div>
+              </a>
+
+              {/* LINE Card */}
+              <a
+                href="https://line.me/ti/p/~pond0947035487"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group p-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950/60 hover:border-emerald-400/60 transition-all flex items-center gap-4"
+              >
+                <div className="p-3 rounded-xl bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 shrink-0">
+                  <FaLine size={22} />
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-slate-500 dark:text-slate-400">
+                    {t.contact.info.line}
+                  </p>
+                  <p className="text-sm font-bold text-slate-800 dark:text-slate-200 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                    pond0947035487
                   </p>
                 </div>
               </a>
