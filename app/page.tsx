@@ -20,6 +20,7 @@ import {
   FaNodeJs,
   FaReact,
   FaTrophy,
+  FaWordpress,
 } from "react-icons/fa";
 import {
   SiTypescript,
@@ -43,6 +44,7 @@ import {
   SiRender,
   SiJsonwebtokens,
   SiGit,
+  SiIntellijidea,
 } from "react-icons/si";
 import {
   Code2,
@@ -60,6 +62,11 @@ import {
   ShieldCheck,
   Layout,
   Terminal,
+  Briefcase,
+  Calendar,
+  Building2,
+  Check,
+  GraduationCap,
 } from "lucide-react";
 
 export default function HomePage() {
@@ -267,6 +274,100 @@ export default function HomePage() {
                 </div>
               </div>
             </FadeInSection>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================================ */}
+      {/* WORK EXPERIENCE SECTION */}
+      {/* ============================================================ */}
+      <section
+        id="experience"
+        className="w-full py-20 lg:py-28 px-4 sm:px-6 lg:px-8 border-t border-slate-200 dark:border-slate-800/80 bg-white dark:bg-slate-900/40 transition-colors duration-300"
+      >
+        <div className="max-w-6xl mx-auto">
+          {/* Section Header */}
+          <FadeInSection className="text-center max-w-2xl mx-auto mb-14">
+            <span className="inline-flex items-center gap-1.5 text-xs font-bold tracking-widest text-sky-600 dark:text-sky-400 uppercase bg-sky-50 dark:bg-sky-950/60 px-3 py-1 rounded-full border border-sky-200 dark:border-sky-800 mb-3">
+              <Briefcase size={13} />
+              {t.experience.tag}
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-1">
+              {t.experience.title}
+            </h2>
+            <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-2">
+              {t.experience.subtitle}
+            </p>
+          </FadeInSection>
+
+          {/* Experience Cards Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+            {t.experience.jobs.map((job: any, index: number) => (
+              <FadeInSection
+                key={index}
+                className="group relative p-6 sm:p-8 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-900/70 hover:border-sky-400/60 dark:hover:border-sky-500/50 hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+              >
+                <div>
+                  {/* Card Header: Role & Period */}
+                  <div className="flex flex-wrap items-start justify-between gap-3 mb-4 pb-4 border-b border-slate-200/80 dark:border-slate-800">
+                    <div>
+                      <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
+                        {job.role}
+                      </h3>
+                      <div className="flex items-center gap-1.5 text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-400 mt-1">
+                        <Building2 size={15} className="text-teal-500 shrink-0" />
+                        <span>{job.company}</span>
+                      </div>
+                    </div>
+
+                    {/* Period Badge */}
+                    <span
+                      className={`inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full border shadow-2xs ${
+                        job.isPresent
+                          ? "bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800"
+                          : "bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-700"
+                      }`}
+                    >
+                      {job.isPresent && (
+                        <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                      )}
+                      <Calendar size={12} className={job.isPresent ? "text-emerald-500" : "text-slate-400"} />
+                      <span>{job.period}</span>
+                    </span>
+                  </div>
+
+                  {/* Bullet Points */}
+                  <ul className="space-y-2.5 mb-6">
+                    {job.points.map((pt: string, i: number) => (
+                      <li
+                        key={i}
+                        className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed"
+                      >
+                        <Check
+                          size={15}
+                          className="text-sky-500 dark:text-sky-400 mt-0.5 shrink-0"
+                        />
+                        <span>{pt}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Tech Stack Chips */}
+                {job.tech && job.tech.length > 0 && (
+                  <div className="pt-4 border-t border-slate-200/60 dark:border-slate-800/80 flex flex-wrap gap-1.5">
+                    {job.tech.map((tItem: string) => (
+                      <span
+                        key={tItem}
+                        className="text-xs px-2.5 py-1 rounded-lg bg-white dark:bg-slate-800/90 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700/70 font-medium"
+                      >
+                        {tItem}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </FadeInSection>
+            ))}
           </div>
         </div>
       </section>
@@ -480,6 +581,9 @@ export default function HomePage() {
                     <Terminal size={14} className="text-blue-500" /> VS Code
                   </span>
                   <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">
+                    <SiIntellijidea size={14} className="text-pink-500" /> IntelliJ IDEA
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">
                     <SiDocker size={14} className="text-sky-500" /> Docker
                   </span>
                   <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">
@@ -532,7 +636,7 @@ export default function HomePage() {
         id="achievements"
         className="w-full py-20 lg:py-28 px-4 sm:px-6 lg:px-8 border-t border-slate-200 dark:border-slate-800/80 bg-white dark:bg-slate-900/50 transition-colors duration-300"
       >
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto space-y-10">
           {/* Header */}
           <FadeInSection className="text-center max-w-2xl mx-auto mb-14">
             <span className="text-xs font-bold tracking-widest text-amber-600 dark:text-amber-400 uppercase">
@@ -546,7 +650,102 @@ export default function HomePage() {
             </p>
           </FadeInSection>
 
-          {/* Achievement Spotlight Card */}
+          {/* 1. Academic Excellence & First-Class Honors Card */}
+          <FadeInSection className="rounded-3xl border border-amber-200/80 dark:border-amber-900/50 bg-gradient-to-br from-amber-50/50 via-white to-slate-50/40 dark:from-amber-950/20 dark:via-slate-900/80 dark:to-slate-900/80 p-6 sm:p-8 lg:p-10 shadow-lg relative overflow-hidden">
+            {/* Subtle decorative glow */}
+            <div className="absolute -top-24 -right-24 w-72 h-72 bg-amber-400/10 dark:bg-amber-500/5 rounded-full blur-3xl pointer-events-none" />
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+              {/* Certificate Image Preview */}
+              <div className="lg:col-span-5 flex flex-col items-center">
+                <button
+                  type="button"
+                  onClick={() => setSelectedImage("/images/honors_certificate.jpg")}
+                  className="group relative w-full rounded-2xl overflow-hidden border-2 border-amber-200/90 dark:border-amber-700/50 bg-white dark:bg-slate-950 shadow-md hover:shadow-2xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                >
+                  <img
+                    src="/images/honors_certificate.jpg"
+                    alt={t.achievements.honorsImageAlt}
+                    className="w-full h-auto object-cover group-hover:scale-102 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-slate-950/0 group-hover:bg-slate-950/30 transition-all flex items-center justify-center">
+                    <span className="opacity-0 group-hover:opacity-100 transition-opacity px-3.5 py-1.5 rounded-full bg-slate-900/90 text-white text-xs font-semibold shadow-lg backdrop-blur-sm flex items-center gap-1.5">
+                      <Sparkles size={13} className="text-amber-400" />
+                      {t.achievements.clickToEnlarge}
+                    </span>
+                  </div>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setSelectedImage("/images/honors_certificate.jpg")}
+                  className="text-xs text-slate-500 dark:text-slate-400 mt-2.5 flex items-center gap-1.5 hover:text-amber-600 dark:hover:text-amber-400 transition-colors"
+                >
+                  <Sparkles size={13} className="text-amber-500" />
+                  <span>{t.achievements.clickToEnlarge}</span>
+                </button>
+              </div>
+
+              {/* Certificate Details */}
+              <div className="lg:col-span-7 flex flex-col">
+                <div className="flex flex-wrap items-center gap-2 mb-3">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-amber-300 dark:border-amber-700/60 bg-amber-50 dark:bg-amber-950/40 text-amber-700 dark:text-amber-300 text-xs font-bold">
+                    <GraduationCap size={15} className="text-amber-500" />
+                    <span>{t.achievements.honorsBadge}</span>
+                  </div>
+                  <div className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-200 dark:border-emerald-800/60 text-emerald-700 dark:text-emerald-300 text-xs font-bold">
+                    <span>GPA 3.96 / 4.00</span>
+                  </div>
+                </div>
+
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+                  {t.achievements.honorsTitle}
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 mb-5">
+                  {t.achievements.honorsSub}
+                </p>
+
+                {/* Key Bullet Points */}
+                <ul className="space-y-3">
+                  {t.achievements.honorsPoints.map((point, index) => (
+                    <li key={index} className="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300">
+                      <CheckCircle2 size={16} className="text-amber-500 mt-0.5 shrink-0" />
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Highlight Badges Box */}
+                <div className="mt-6 pt-5 border-t border-amber-100 dark:border-slate-800/80 grid grid-cols-2 sm:grid-cols-3 gap-3">
+                  <div className="p-3 rounded-xl bg-white/80 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/60">
+                    <span className="block text-[11px] font-medium text-slate-500 dark:text-slate-400">
+                      {t.achievements.honorsStats.gpaLabel}
+                    </span>
+                    <span className="text-sm sm:text-base font-extrabold text-amber-600 dark:text-amber-400">
+                      {t.achievements.honorsStats.gpaValue}
+                    </span>
+                  </div>
+                  <div className="p-3 rounded-xl bg-white/80 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/60">
+                    <span className="block text-[11px] font-medium text-slate-500 dark:text-slate-400">
+                      {t.achievements.honorsStats.statusLabel}
+                    </span>
+                    <span className="text-sm sm:text-base font-bold text-slate-900 dark:text-slate-100">
+                      {t.achievements.honorsStats.statusValue}
+                    </span>
+                  </div>
+                  <div className="p-3 rounded-xl bg-white/80 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/60 col-span-2 sm:col-span-1">
+                    <span className="block text-[11px] font-medium text-slate-500 dark:text-slate-400">
+                      {t.achievements.honorsStats.facultyLabel}
+                    </span>
+                    <span className="text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-200">
+                      {t.achievements.honorsStats.facultyValue}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </FadeInSection>
+
+          {/* 2. Startup Thailand League 2025 Spotlight Card */}
           <FadeInSection className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/80 p-6 sm:p-8 lg:p-10 shadow-lg">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               {/* Banner Image */}
@@ -621,6 +820,132 @@ export default function HomePage() {
                     <div className="absolute inset-0 bg-slate-950/20 group-hover:bg-transparent transition-colors" />
                   </button>
                 ))}
+              </div>
+            </div>
+          </FadeInSection>
+
+          {/* 3. TPQI Professional Qualification & Competency Certificate */}
+          <FadeInSection className="rounded-3xl border border-sky-200/80 dark:border-sky-900/40 bg-gradient-to-br from-sky-50/40 via-white to-indigo-50/30 dark:from-sky-950/20 dark:via-slate-900/80 dark:to-slate-900/80 p-6 sm:p-8 lg:p-10 shadow-lg relative overflow-hidden">
+            {/* Ambient background glow */}
+            <div className="absolute -bottom-24 -right-24 w-72 h-72 bg-sky-400/10 dark:bg-sky-500/5 rounded-full blur-3xl pointer-events-none" />
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+              {/* Dual Certificate Image Previews */}
+              <div className="lg:col-span-5 flex flex-col items-center">
+                <div className="grid grid-cols-2 gap-3 sm:gap-4 w-full">
+                  {/* Certificate 1: Qualification */}
+                  <div className="flex flex-col items-center">
+                    <button
+                      type="button"
+                      onClick={() => setSelectedImage("/images/tpqi_qualification_certificate.jpg")}
+                      className="group relative w-full aspect-[1/1.4] rounded-xl overflow-hidden border-2 border-sky-200/80 dark:border-sky-800/50 bg-white dark:bg-slate-950 shadow-md hover:shadow-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-sky-500"
+                    >
+                      <img
+                        src="/images/tpqi_qualification_certificate.jpg"
+                        alt={t.achievements.tpqiImageAltQualification}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-slate-950/0 group-hover:bg-slate-950/30 transition-all flex items-center justify-center">
+                        <span className="opacity-0 group-hover:opacity-100 transition-opacity p-2 rounded-full bg-slate-900/90 text-white shadow-md backdrop-blur-sm">
+                          <Sparkles size={14} className="text-sky-400" />
+                        </span>
+                      </div>
+                    </button>
+                    <span className="text-[11px] font-medium text-slate-600 dark:text-slate-400 mt-2 text-center line-clamp-1">
+                      {t.achievements.tpqiCertQualification}
+                    </span>
+                  </div>
+
+                  {/* Certificate 2: Competency */}
+                  <div className="flex flex-col items-center">
+                    <button
+                      type="button"
+                      onClick={() => setSelectedImage("/images/tpqi_competency_certificate.jpg")}
+                      className="group relative w-full aspect-[1/1.4] rounded-xl overflow-hidden border-2 border-sky-200/80 dark:border-sky-800/50 bg-white dark:bg-slate-950 shadow-md hover:shadow-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-sky-500"
+                    >
+                      <img
+                        src="/images/tpqi_competency_certificate.jpg"
+                        alt={t.achievements.tpqiImageAltCompetency}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-slate-950/0 group-hover:bg-slate-950/30 transition-all flex items-center justify-center">
+                        <span className="opacity-0 group-hover:opacity-100 transition-opacity p-2 rounded-full bg-slate-900/90 text-white shadow-md backdrop-blur-sm">
+                          <Sparkles size={14} className="text-sky-400" />
+                        </span>
+                      </div>
+                    </button>
+                    <span className="text-[11px] font-medium text-slate-600 dark:text-slate-400 mt-2 text-center line-clamp-1">
+                      {t.achievements.tpqiCertCompetency}
+                    </span>
+                  </div>
+                </div>
+
+                <button
+                  type="button"
+                  onClick={() => setSelectedImage("/images/tpqi_qualification_certificate.jpg")}
+                  className="text-xs text-slate-500 dark:text-slate-400 mt-3 flex items-center gap-1.5 hover:text-sky-600 dark:hover:text-sky-400 transition-colors"
+                >
+                  <Sparkles size={13} className="text-sky-500" />
+                  <span>{t.achievements.clickToEnlarge}</span>
+                </button>
+              </div>
+
+              {/* Achievement Content */}
+              <div className="lg:col-span-7 flex flex-col">
+                <div className="flex flex-wrap items-center gap-2 mb-3">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-sky-300 dark:border-sky-700/60 bg-sky-50 dark:bg-sky-950/40 text-sky-700 dark:text-sky-300 text-xs font-bold">
+                    <ShieldCheck size={14} className="text-sky-500" />
+                    <span>{t.achievements.tpqiBadge}</span>
+                  </div>
+                  <div className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-indigo-50 dark:bg-indigo-950/50 border border-indigo-200 dark:border-indigo-800/60 text-indigo-700 dark:text-indigo-300 text-xs font-bold">
+                    <span>Level 3 (ระดับ 3)</span>
+                  </div>
+                </div>
+
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+                  {t.achievements.tpqiTitle}
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 mb-5">
+                  {t.achievements.tpqiSub}
+                </p>
+
+                {/* Key Bullet Points */}
+                <ul className="space-y-3">
+                  {t.achievements.tpqiPoints.map((point, index) => (
+                    <li key={index} className="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300">
+                      <CheckCircle2 size={16} className="text-sky-500 mt-0.5 shrink-0" />
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Highlight Badges Box */}
+                <div className="mt-6 pt-5 border-t border-sky-100 dark:border-slate-800/80 grid grid-cols-2 sm:grid-cols-3 gap-3">
+                  <div className="p-3 rounded-xl bg-white/80 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/60">
+                    <span className="block text-[11px] font-medium text-slate-500 dark:text-slate-400">
+                      {t.achievements.tpqiStats.levelLabel}
+                    </span>
+                    <span className="text-sm sm:text-base font-extrabold text-sky-600 dark:text-sky-400">
+                      {t.achievements.tpqiStats.levelValue}
+                    </span>
+                  </div>
+                  <div className="p-3 rounded-xl bg-white/80 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/60">
+                    <span className="block text-[11px] font-medium text-slate-500 dark:text-slate-400">
+                      {t.achievements.tpqiStats.occupationLabel}
+                    </span>
+                    <span className="text-sm sm:text-base font-bold text-slate-900 dark:text-slate-100">
+                      {t.achievements.tpqiStats.occupationValue}
+                    </span>
+                  </div>
+                  <div className="p-3 rounded-xl bg-white/80 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/60 col-span-2 sm:col-span-1">
+                    <span className="block text-[11px] font-medium text-slate-500 dark:text-slate-400">
+                      {t.achievements.tpqiStats.orgLabel}
+                    </span>
+                    <span className="text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-200">
+                      {t.achievements.tpqiStats.orgValue}
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
           </FadeInSection>

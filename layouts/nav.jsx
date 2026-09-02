@@ -22,6 +22,7 @@ const Navbar = () => {
   const menus = [
     { title: t.nav.home, url: "/" },
     { title: t.nav.about, url: "/#aboutme" },
+    { title: t.nav.experience, url: "/#experience" },
     { title: t.nav.skills, url: "/#skills" },
     { title: t.nav.achievements, url: "/#achievements" },
     { title: t.nav.projects, url: "/projects" },
