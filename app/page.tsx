@@ -25,6 +25,7 @@ import {
 import {
   SiTypescript,
   SiNextdotjs,
+  SiAngular,
   SiExpress,
   SiPrisma,
   SiPostgresql,
@@ -432,6 +433,9 @@ export default function HomePage() {
                     <SiNextdotjs size={14} className="text-slate-900 dark:text-white" /> Next.js
                   </span>
                   <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">
+                    <SiAngular size={14} className="text-red-600" /> Angular
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">
                     <SiBootstrap size={14} className="text-purple-500" /> Bootstrap 5
                   </span>
                   <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">
@@ -625,6 +629,16 @@ export default function HomePage() {
                   </span>
                   <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">
                     <SiRender size={14} className="text-slate-900 dark:text-white" /> Render
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">
+                    <svg className="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="24" height="24" rx="5" fill="#E30C34" />
+                      <rect x="5.5" y="5" width="5" height="4.5" rx="1.2" fill="white" />
+                      <rect x="5.5" y="11.5" width="5" height="7.5" rx="1.2" fill="white" />
+                      <rect x="13.5" y="5" width="5" height="7.5" rx="1.2" fill="white" />
+                      <rect x="13.5" y="14.5" width="5" height="4.5" rx="1.2" fill="white" />
+                    </svg>
+                    TiDB Cloud
                   </span>
                 </div>
               </div>
